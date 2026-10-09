@@ -1,0 +1,278 @@
+/* =========================
+   1. Color palette and basics
+   ========================= */
+
+:root {
+    --cream: #F7F2E8;
+    --card: #FFFCF6;
+    --text: #514438;
+    --muted: #857968;
+    --accent: #B9A58A;
+    --border: #E6DDCD;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 32px 20px;
+    background: var(--cream);
+    color: var(--text);
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.7;
+}
+
+/* =========================
+   2. Main page container
+   ========================= */
+
+.page-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px 48px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+}
+
+/* =========================
+   3. Header and navigation
+   ========================= */
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    color: var(--text);
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.navigation {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.navigation a,
+.site-footer a {
+    color: var(--muted);
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.navigation a:hover,
+.site-footer a:hover {
+    color: var(--text);
+}
+
+/* =========================
+   4. Hero section
+   ========================= */
+
+.hero {
+    padding: 76px 0 64px;
+    max-width: 700px;
+}
+
+.eyebrow {
+    color: var(--muted);
+    font-family: Arial, sans-serif;
+    font-size: 0.72rem;
+    font-weight: bold;
+    letter-spacing: 0.14em;
+}
+
+.hero h1 {
+    margin: 12px 0;
+    font-size: clamp(2.4rem, 6vw, 4.5rem);
+    font-weight: normal;
+    line-height: 1.15;
+    letter-spacing: -0.04em;
+}
+
+.hero-description {
+    max-width: 520px;
+    color: var(--muted);
+    font-size: 1.1rem;
+}
+
+/* =========================
+   5. Projects grid
+   ========================= */
+
+.projects-section {
+    padding: 24px 0 64px;
+}
+
+.section-heading {
+    margin-bottom: 24px;
+}
+
+.section-heading h2,
+.about-section h2,
+.contact-section h2 {
+    margin: 4px 0 12px;
+    font-size: 2rem;
+    font-weight: normal;
+    letter-spacing: -0.03em;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 245px;
+    padding: 28px;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+}
+
+.project-number {
+    color: var(--muted);
+    font-family: Arial, sans-serif;
+    font-size: 0.8rem;
+}
+
+.project-card h3 {
+    margin: 24px 0 8px;
+    font-size: 1.35rem;
+    font-weight: normal;
+}
+
+.project-card p {
+    margin: 0 0 14px;
+}
+
+.project-card .project-tech {
+    color: var(--muted);
+    font-family: Arial, sans-serif;
+    font-size: 0.78rem;
+}
+
+.project-card a,
+.contact-section a {
+    margin-top: auto;
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+    text-underline-offset: 4px;
+}
+
+/* =========================
+   6. About and contact
+   ========================= */
+
+.about-section,
+.contact-section {
+    padding: 40px 0;
+    border-top: 1px solid var(--border);
+}
+
+.about-section p:not(.eyebrow),
+.contact-section p:not(.eyebrow) {
+    max-width: 620px;
+    color: var(--muted);
+}
+
+/* =========================
+   7. Footer
+   ========================= */
+
+.site-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+}
+
+.site-footer p {
+    color: var(--muted);
+    font-family: Arial, sans-serif;
+    font-size: 0.8rem;
+}
+
+/* =========================
+   8. Mobile layout
+   ========================= */
+
+@media (max-width: 650px) {
+    body {
+        padding: 12px;
+    }
+
+    .page-container {
+        padding: 24px 20px;
+        border-radius: 14px;
+    }
+
+    .site-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .navigation {
+        gap: 16px;
+    }
+
+    .hero {
+        padding: 52px 0 40px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        min-height: 220px;
+        padding: 24px;
+    }
+}
+
+/* Respect visitors who prefer reduced motion. */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
