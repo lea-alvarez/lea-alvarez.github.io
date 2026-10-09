@@ -5,11 +5,11 @@
 :root {
     --cream: #F5F1E7;
     --ivory: #FFFCF6;
-    --sage: #71816A;
-    --sage-light: #E5EADD;
+    --sage: #526B4F;
+    --sage-light: #DCE6D5;
     --text: #403F34;
     --muted: #77776A;
-    --border: #E4DECF;
+    --border: #C6D2BC;
 }
 
 * {
